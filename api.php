@@ -14,14 +14,14 @@ $_msg = $arrJson['events'][0]['message']['text'];
  
  
 $api_key="7_YqK1vdFX2jsHe_EhLFUIy62l4zFl-H";
-$url = 'https://api.mlab.com/api/1/databases/agent48/collections/agent?apiKey='.$api_key.'';
+$url = 'https://api.mlab.com/api/1/databases/duckduck/collections/linebot?apiKey='.$api_key.'';
 $json = file_get_contents('https://api.mlab.com/api/1/databases/duckduck/collections/linebot?apiKey='.$api_key.'&q={"question":"'.$_msg.'"}');
 $data = json_decode($json);
 $isData=sizeof($data);
  
-if (strpos($_msg, 'สอนเป็ด') !== false) {
-  if (strpos($_msg, 'สอนเป็ด') !== false) {
-    $x_tra = str_replace("สอนเป็ด","", $_msg);
+if (strpos($_msg, 'สอน48') !== false) {
+  if (strpos($_msg, 'สอน48') !== false) {
+    $x_tra = str_replace("สอน48","", $_msg);
     $pieces = explode("|", $x_tra);
     $_question=str_replace("[","",$pieces[0]);
     $_answer=str_replace("]","",$pieces[1]);
@@ -44,7 +44,7 @@ if (strpos($_msg, 'สอนเป็ด') !== false) {
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = 'ขอบคุณที่สอนเป็ด';
+    $arrPostData['messages'][0]['text'] = 'ขอบคุณที่สอน48';
   }
 }else{
   if($isData >0){
@@ -58,7 +58,7 @@ if (strpos($_msg, 'สอนเป็ด') !== false) {
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = 'ก๊าบบ คุณสามารถสอนให้ฉลาดได้เพียงพิมพ์: สอนเป็ด[คำถาม|คำตอบ]';
+    $arrPostData['messages'][0]['text'] = 'ก๊าบบ คุณสามารถสอนให้ฉลาดได้เพียงพิมพ์: สอน48[คำถาม|คำตอบ]';
   }
 }
  
