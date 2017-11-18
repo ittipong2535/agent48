@@ -1,6 +1,6 @@
 <?php
  
-$strAccessToken = "<Channel Access Token Line>";
+$strAccessToken = "CbTv7VdQFapQHopr9CHcZwsgc+mLHhyJWsZ2D6kQUED72fUlpEM8fwmgSsCr1i1groolVNS9MPcbq0/0STdJfQsSDm7eog9tclyge8zBxPLhudxUt5pl5eUARamJxlvMouf8qjCI64dhYEYBEqSvxAdB04t89/1O/w1cDnyilFU=";
  
 $content = file_get_contents('php://input');
 $arrJson = json_decode($content, true);
@@ -13,8 +13,8 @@ $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 $_msg = $arrJson['events'][0]['message']['text'];
  
  
-$api_key="<MLAB APIKEY>";
-$url = 'https://api.mlab.com/api/1/databases/duckduck/collections/linebot?apiKey='.$api_key.'';
+$api_key="7_YqK1vdFX2jsHe_EhLFUIy62l4zFl-H";
+$url = 'https://api.mlab.com/api/1/databases/agent48/collections/agent?apiKey='.$api_key.'';
 $json = file_get_contents('https://api.mlab.com/api/1/databases/duckduck/collections/linebot?apiKey='.$api_key.'&q={"question":"'.$_msg.'"}');
 $data = json_decode($json);
 $isData=sizeof($data);
